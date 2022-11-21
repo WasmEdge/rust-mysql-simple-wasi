@@ -15,7 +15,7 @@ Put the desired version of the crate into the `dependencies` section of your `Ca
 
 ```toml
 [dependencies]
-mysql_wasi = "23.0.0"
+mysql_wasi = "23.0.1"
 ```
 
 ### Example
