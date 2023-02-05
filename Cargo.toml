@@ -28,7 +28,8 @@ default = [
     # "native-tls",
 
     # It is necessary to choose one of `flate2` backends.
-    "flate2/zlib",
+    # "flate2/zlib",
+    # "flate2",
 
     # set of enabled-by-default mysql_common features
     "mysql_common/bigdecimal03",
@@ -67,9 +68,10 @@ bufstream = "~0.1"
 bytes = "1.0.1"
 crossbeam = "0.8.1"
 io-enum = "1.0.0"
-flate2 = { version = "1.0", default-features = false }
+flate2 = { version = "1.0", default-features = true }
 lru = "0.8.1"
-mysql_common = { version = "0.29.1", default-features = false }
+mysql_common = { version = "0.29.2", default-features = false }
+# socket2 = "0.4"
 once_cell = "1.7.2"
 pem = "1.0.1"
 percent-encoding = "2.1.0"
@@ -107,6 +109,5 @@ libc = "0.2"
 
 [target.'cfg(not(target_os = "wasi"))'.dependencies]
 socket2 = "0.4"
-
 [target.'cfg(target_os = "wasi")'.dependencies]
-wasmedge_wasi_socket = "0.4.2"
+wasmedge_wasi_socket = "0.4"

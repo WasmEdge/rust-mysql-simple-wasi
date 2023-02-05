@@ -86,10 +86,10 @@ impl Stream {
         }
     }
 
-    #[cfg(all(not(unix), not(windows)))]
-    fn connect_socket(&mut self) -> MyResult<()> {
-        unimplemented!("Sockets is not implemented on current platform");
-    }
+    // #[cfg(all(not(unix), not(windows)))]
+    // fn connect_socket(&mut self) -> MyResult<()> {
+    //     unimplemented!("Sockets is not implemented on current platform");
+    // }
 
     pub fn connect_tcp(
         ip_or_hostname: &str,
@@ -136,21 +136,9 @@ impl Stream {
     }
 
     pub fn is_insecure(&self) -> bool {
-        match self {
-            Stream::TcpStream(TcpStream::Insecure(_)) => true,
-            _ => false,
-        }
+        false
     }
 
-    #[cfg(not(target_os = "wasi"))]
-    pub fn is_socket(&self) -> bool {
-        match self {
-            Stream::SocketStream(_) => true,
-            _ => false,
-        }
-    }
-
-    #[cfg(target_os = "wasi")]
     pub fn is_socket(&self) -> bool {
         false
     }

@@ -109,17 +109,17 @@ impl<T: ToSocketAddrs> MyTcpBuilder<T> {
         let MyTcpBuilder {
             address,
             bind_address,
-            connect_timeout,
-            read_timeout,
-            write_timeout,
-            keepalive_time_ms,
+            connect_timeout: _,
+            read_timeout: _,
+            write_timeout: _,
+            keepalive_time_ms: _,
             #[cfg(any(target_os = "linux", target_os = "macos"))]
             keepalive_probe_interval_secs,
             #[cfg(any(target_os = "linux", target_os = "macos",))]
             keepalive_probe_count,
             #[cfg(target_os = "linux")]
             user_timeout,
-            nodelay,
+            nodelay: _,
         } = self;
         let err_msg = if bind_address.is_none() {
             "could not connect to any address"
