@@ -110,4 +110,4 @@ libc = "0.2"
 [target.'cfg(not(target_os = "wasi"))'.dependencies]
 socket2 = "0.4"
 [target.'cfg(target_os = "wasi")'.dependencies]
-wasmedge_wasi_socket = "0.4"
+wasmedge_wasi_socket = "0.5"
